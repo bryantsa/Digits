@@ -4,6 +4,9 @@ import './add-stuff-page.js';
 import './add-contact-page.html';
 import './add-contact-page.js';
 
+import './age-form-page.html';
+import './age-form-page.js';
+
 import './edit-contact-page.html';
 import './edit-contact-page.js';
 

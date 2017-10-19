@@ -1,4 +1,4 @@
-import { Contacts } from '../../api/contacts/Contacts.js';
+import { Contacts } from '../../api/contacts/contacts.js';
 import { _ } from 'meteor/underscore';
 
 /**
@@ -13,7 +13,34 @@ const ContactSeeds = [
     Telephone: 8081234522,
     Email: 'abc@hawaii.edu',
   },
-
+  {
+    First: 'John',
+    Last: 'Jacob',
+    Address: '321 road',
+    Telephone: 9091234522,
+    Email: 'cba@hawaii.edu',
+  },
+  {
+    First: 'KK',
+    Last: 'Reddick',
+    Address: '300 road',
+    Telephone: 7071234522,
+    Email: 'pts@hawaii.edu',
+  },
+  {
+    First: 'TEST TEST',
+    Last: 'TESTING',
+    Address: '300 road',
+    Telephone: 7071234522,
+    Email: 'pts@hawaii.edu',
+  },
+  {
+    First: 'MONGO',
+    Last: 'MONGO',
+    Address: '300 road',
+    Telephone: 7071234522,
+    Email: 'pts@hawaii.edu',
+  },
 ];
 
 /**

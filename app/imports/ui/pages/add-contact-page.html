@@ -1,35 +1,20 @@
-<template name="add_contact_Page">
+<template name="Add_Contact_Page">
   <div style="margin-top: 30px" class="ui container">
-    <form class="ui form">
+    <form class="ui form contact-data-form {{ errorClass }}">
       <h4 class="ui dividing header">Add Contact</h4>
       <div class="field">
         <label>Name</label>
         <div class="two fields">
-          <div class="field">
-            <input type="text" name="first" placeholder="First Name">
-          </div>
-          <div class="field">
-            <input type="text" name="last" placeholder="Last Name">
-          </div>
+          {{> Text_Form_Control label="First" required=true errorMessage=(fieldError "first")}}
+          {{> Text_Form_Control label="Last" required=true errorMessage=(fieldError "last")}}
         </div>
       </div>
-      <div class="field">
-        <label>Address</label>
-        <div class="fields">
-          <div class="twelve wide field">
-            <input type="text" name="address" placeholder="Street Address">
-          </div>
-        </div>
-      </div>
+      {{> Text_Form_Control label="Address" required=true errorMessage=(fieldError "address")}}
       <div class="field">
         <label>Telephone/E-mail</label>
         <div class="two fields">
-          <div class="field">
-            <input type="text" name="telephone" placeholder="XXX-XXX-XXXX">
-          </div>
-          <div class="field">
-            <input type="text" name="email" placeholder="foo@bar.com">
-          </div>
+          {{> Text_Form_Control label="Telephone" required=true errorMessage=(fieldError "telephone")}}
+          {{> Text_Form_Control label="Email" required=true errorMessage=(fieldError "email")}}
         </div>
       </div>
       <button class="ui button" type="submit">Submit</button>

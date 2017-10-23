@@ -1,6 +1,7 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
+
 FlowRouter.route('/', {
   name: 'Home_Page',
   action() {
@@ -23,9 +24,9 @@ FlowRouter.route('/edit_contact/:id', {
 });
 
 FlowRouter.route('/add-contact', {
-  name: 'add_contact_Page',
+  name: 'Add_Contact_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'add_contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
   },
 });
 

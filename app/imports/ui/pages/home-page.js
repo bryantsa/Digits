@@ -6,7 +6,7 @@ Template.Home_Page.helpers({
   /**
    * @returns {*} All of the Contacts documents.
    */
-  ContactsList() {
+  contactsList() {
     return Contacts.find();
   },
 });

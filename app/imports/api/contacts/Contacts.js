@@ -9,32 +9,32 @@ export const Contacts = new Mongo.Collection('Contacts');
  * Create the schema for Stuff
  */
 export const ContactsSchema = new SimpleSchema({
-  First: {
-    label: 'First',
+  first: {
+    label: 'first',
     type: String,
     optional: false,
     max: 200,
   },
-  Last: {
-    label: 'Last',
+  last: {
+    label: 'last',
     type: String,
     optional: false,
     max: 200,
   },
-  Address: {
-    label: 'Address',
+  address: {
+    label: 'address',
     type: String,
     optional: false,
     max: 200,
   },
-  Telephone: {
-    label: 'Telephone',
+  telephone: {
+    label: 'telephone',
     type: String,
     optional: false,
     max: 200,
   },
-  Email: {
-    label: 'Email',
+  email: {
+    label: 'email',
     type: String,
     optional: false,
     max: 200,

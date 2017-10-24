@@ -24,7 +24,7 @@ Template.Edit_Contact_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
-  fieldError() {
+  fieldError(fieldName) {
     const invalidKeys = Template.instance().context.invalidKeys();
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
     return errorObject && Template.instace().context.keyErrorMessage(errorObject.name);
@@ -35,20 +35,19 @@ Template.Edit_Contact_Page.events({
   'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const First = event.target.First.value;
-    const Last = event.target.Last.value;
-    const Address = event.target.Address.value;
-    const Telephone = event.target.Telephone.value;
-    const Email = event.target.Email.value;
+    const first = event.target.first.value;
+    const last = event.target.last.value;
+    const address = event.target.address.value;
+    const telephone = event.target.telephone.value;
+    const email = event.target.email.value;
 
-    const updatedContactData = { First, Last, Address, Telephone, Email };
+    const updatedContactData = { first, last, address, telephone, email };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
     ContactsSchema.clean(updatedContactData);
     instance.context.validate(updatedContactData);
     if (instance.context.isValid()) {
-      Contacts.insert(updatedContactData);
       Contacts.update(FlowRouter.getParam('_id'), { $set: updatedContactData });
       instance.messageFlags.set(displayErrorMessages, false);
       FlowRouter.go('Home_Page');

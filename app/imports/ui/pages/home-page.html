@@ -15,13 +15,13 @@
       </thead>
 
       <tbody>
-      {{#each Contact in ContactsList}}
+      {{#each contact in contactsList}}
       <tr>
-        <td>{{Contact.First}}</td>
-        <td>{{Contact.Last}}</td>
-        <td>{{Contact.Address}}</td>
-        <td>{{Contact.Telephone}}</td>
-        <td>{{Contact.Email}}</td>
+        <td>{{contact.first}}</td>
+        <td>{{contact.last}}</td>
+        <td>{{contact.address}}</td>
+        <td>{{contact.telephone}}</td>
+        <td>{{contact.email}}</td>
         <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
       </tr>
       {{/each}}

@@ -5,16 +5,16 @@
       <div class="field">
         <label>Name</label>
         <div class="two fields">
-          {{> Text_Form_Control label="first" required=true errorMessage=(fieldError "first")}}
-          {{> Text_Form_Control label="last" required=true errorMessage=(fieldError "last")}}
+          {{> Text_Form_Control label="First" required=true errorMessage=(fieldError "first")}}
+          {{> Text_Form_Control label="Last" required=true errorMessage=(fieldError "last")}}
         </div>
       </div>
-      {{> Text_Form_Control label="address" required=true errorMessage=(fieldError "address")}}
+      {{> Text_Form_Control label="Address" required=true errorMessage=(fieldError "address")}}
       <div class="field">
         <label>Telephone/E-mail</label>
         <div class="two fields">
-          {{> Text_Form_Control label="telephone" required=true errorMessage=(fieldError "telephone")}}
-          {{> Text_Form_Control label="email" required=true errorMessage=(fieldError "email")}}
+          {{> Text_Form_Control label="Telephone" required=true errorMessage=(fieldError "telephone")}}
+          {{> Text_Form_Control label="Email" required=true errorMessage=(fieldError "email")}}
         </div>
       </div>
       <button class="ui button" type="submit">Submit</button>

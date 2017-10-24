@@ -6,20 +6,20 @@
       <div class="field">
         <label>Name</label>
         <div class="two fields">
-          {{> Text_Form_Control label="first" required=true value=(contactDataField 'first') errorMessage=(fieldError
+          {{> Text_Form_Control label="First" required=true value=(contactDataField 'first') errorMessage=(fieldError
           "first")}}
-          {{> Text_Form_Control label="last" required=true value=(contactDataField 'last') errorMessage=(fieldError
+          {{> Text_Form_Control label="Last" required=true value=(contactDataField 'last') errorMessage=(fieldError
           "last")}}
         </div>
       </div>
-      {{> Text_Form_Control label="address" required=true value=(contactDataField 'address') errorMessage=(fieldError
+      {{> Text_Form_Control label="Address" required=true value=(contactDataField 'address') errorMessage=(fieldError
       "address")}}
       <div class="field">
         <label>Telephone/E-mail</label>
         <div class="two fields">
-          {{> Text_Form_Control label="telephone" required=true value=(contactDataField 'telephone')
+          {{> Text_Form_Control label="Telephone" required=true value=(contactDataField 'telephone')
           errorMessage=(fieldError "telephone")}}
-          {{> Text_Form_Control label="email" required=true value=(contactDataField 'email') errorMessage=(fieldError
+          {{> Text_Form_Control label="Email" required=true value=(contactDataField 'email') errorMessage=(fieldError
           "email")}}
         </div>
       </div>

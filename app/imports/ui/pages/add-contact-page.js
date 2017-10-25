@@ -4,9 +4,7 @@ import { _ } from 'meteor/underscore';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 
-
 const displayErrorMessages = 'displayErrorMessages';
-
 
 Template.Add_Contact_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
@@ -34,19 +32,19 @@ Template.Add_Contact_Page.events({
     const address = event.target.address.value;
     const telephone = event.target.telephone.value;
     const email = event.target.email.value;
-
     const newContactData = { first, last, address, telephone, email };
     // Clear out any old validation errors.
     instance.context.resetValidation();
-    // Invoke clean so that newStudentData reflects what will be inserted.
+    // Invoke clean so that ContactData reflects what will be inserted.
     ContactsSchema.clean(newContactData);
     instance.context.validate(newContactData);
     if (instance.context.isValid()) {
-      Contacts.insert(newContactData);
-      instance.messageFlags.set(displayErrorMessages, false);
-      FlowRouter.go('Home_Page');
+        Contacts.insert(newContactData);
+        instance.messageFlags.set(displayErrorMessages, false);
+        FlowRouter.go('Home_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
+      console.log('Error as expected');
     }
   },
 });

@@ -29,9 +29,9 @@ export const ContactsSchema = new SimpleSchema({
   },
   telephone: {
     label: 'telephone',
-    type: Number,
+    type: String,
     optional: false,
-    defaultValue: 0,
+    regEx: /^\d{3}-\d{3}-\d{4}/,
   },
   email: {
     label: 'email',

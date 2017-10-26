@@ -44,7 +44,7 @@ const ContactSeeds = [
 ];
 
 /**
- * Initialize the Stuff collection if empty with seed data.
+ * Initialize the Contacts collection if empty with seed data.
  */
 if (Contacts.find().count() === 0) {
   _.each(ContactSeeds, function seedContacts(contact) {

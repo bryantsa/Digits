@@ -5,13 +5,13 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 
 const displayErrorMessages = 'displayErrorMessages';
-console.log(_.contains(Contacts.find(),Contacts.findOne({ first: 'kjn', last: 'lkn' })));
 
 
 Template.Add_Contact_Page.onCreated(function onCreated() {
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ContactsSchema.namedContext('Add_Contact_Page');
+  this.subscribe('Contacts');
 });
 
 Template.Add_Contact_Page.helpers({
@@ -36,22 +36,21 @@ Template.Add_Contact_Page.events({
     const email = event.target.Email.value;
 
     const newContactData = { first, last, address, telephone, email };
-
+    console.log(Contacts.findOne({ first: 'Bryant', last: 'Sanchez' }));
+    const existing = Contacts.findOne({ first: first, last: last });
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
     ContactsSchema.clean(newContactData);
     instance.context.validate(newContactData);
     if (instance.context.isValid()) {
-      console.log('Valid');
-      if (_.contains(Contacts.findOne({ first: first, last: last })) === false) {
+      if (existing === undefined) {
         Contacts.insert(newContactData);
         instance.messageFlags.set(displayErrorMessages, false);
         FlowRouter.go('Home_Page');
-      } else {
-        console.log('Errorfoudindoina');
       }
-    }else {
+    }
+    else {
       console.log('Error found 1');
       instance.messageFlags.set(displayErrorMessages, true);
     }

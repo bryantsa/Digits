@@ -43,6 +43,10 @@ export const ContactsSchema = new SimpleSchema({
     label: 'favorite',
     type: Boolean,
   },
+  group: {
+    label: 'group',
+    type: String,
+  }
 });
 
 Contacts.attachSchema(ContactsSchema);

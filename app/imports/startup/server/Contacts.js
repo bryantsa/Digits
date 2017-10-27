@@ -13,6 +13,7 @@ const ContactSeeds = [
     telephone: '808-123-4522',
     email: 'abc@hawaii.edu',
     favorite: false,
+    group: ''
   },
   {
     first: 'John',
@@ -21,6 +22,7 @@ const ContactSeeds = [
     telephone: '909-123-4522',
     email: 'cba@hawaii.edu',
     favorite: false,
+    group: ''
   },
   {
     first: 'KK',
@@ -29,6 +31,7 @@ const ContactSeeds = [
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
     favorite: false,
+    group: ''
   },
   {
     first: 'TEST TEST',
@@ -37,6 +40,7 @@ const ContactSeeds = [
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
     favorite: false,
+    group: ''
   },
   {
     first: 'MONGO',
@@ -45,6 +49,7 @@ const ContactSeeds = [
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
     favorite: false,
+    group: ''
   },
 
 ];

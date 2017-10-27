@@ -24,6 +24,9 @@
           </div>
         </div>
         <div class="field">
+          {{> Select_Form_Control label="Group" options=groups default='Other' errorMessage=(fieldError "group") }}
+        </div>
+        <div class="field">
           {{> Checkbox_Field label= "Favorite" checked = fav}}
         </div>
 

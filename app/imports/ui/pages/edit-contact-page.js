@@ -15,6 +15,11 @@ Template.Edit_Contact_Page.onCreated(function onCreated() {
   this.context = ContactsSchema.namedContext('Edit_Contact_Page');
 });
 
+
+
+// The form field structures to be shared by both the create page and the edit page.
+export const groupList = ['School', 'Work', 'Family', 'Friends', 'Other'];
+
 Template.Edit_Contact_Page.helpers({
   contactDataField(fieldName) {
     const contactData = Contacts.findOne(FlowRouter.getParam('_id'));
@@ -37,7 +42,10 @@ Template.Edit_Contact_Page.helpers({
     } else {
       return false;
     }
-  }
+  },
+  groups() {
+    return _.map(groupList, function makegroupObject(group) { return { label: group }; });
+  },
 });
 
 Template.Edit_Contact_Page.events({
@@ -50,8 +58,9 @@ Template.Edit_Contact_Page.events({
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
     const favorite = event.target.Favorite.checked;
+    const group = event.target.Group.value;
 
-    const updatedContactData = { first, last, address, telephone, email, favorite };
+    const updatedContactData = { first, last, address, telephone, email, favorite, group };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.

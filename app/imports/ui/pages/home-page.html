@@ -2,35 +2,35 @@
   <div class="ui container">
 
     {{#if Template.subscriptionsReady}}
-    <table style="margin-top: 20px" class="ui celled table">
-      <thead>
-      <tr>
-        <th>First</th>
-        <th>Last</th>
-        <th>Address</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Edit</th>
-        <th>Groups</th>
-      </tr>
-      </thead>
+      <table class="ui sortable sortable-table celled table" style="margin-top: 20px">
+        <thead>
+        <tr>
+          <th>First</th>
+          <th>Last</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Edit</th>
+          <th>Groups</th>
+        </tr>
+        </thead>
 
-      <tbody>
-      {{#each contact in contactsList}}
-      <tr>
-        <td><i class="{{ star 'favorite' contact}}"></i>{{contact.first}}</td>
-        <td>{{contact.last}}</td>
-        <td>{{contact.address}}</td>
-        <td>{{contact.telephone}}</td>
-        <td>{{contact.email}}</td>
-        <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
-        <td><i class="{{error 'Friends' contact}}"></i> {{contact.group}}</td>
-      </tr>
-      {{/each}}
-      </tbody>
-    </table>
+        <tbody>
+        {{#each contact in contactsList}}
+          <tr>
+            <td><i class="{{ star 'favorite' contact}}"></i>{{contact.first}}</td>
+            <td>{{contact.last}}</td>
+            <td>{{contact.address}}</td>
+            <td>{{contact.telephone}}</td>
+            <td>{{contact.email}}</td>
+            <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
+            <td>{{contact.group}}</td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
     {{else}}
-    {{> Loading}}
+      {{> Loading}}
     {{/if}}
   </div>
 </template>

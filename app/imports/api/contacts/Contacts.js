@@ -39,6 +39,10 @@ export const ContactsSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
+  favorite: {
+    label: 'favorite',
+    type: Boolean,
+  },
 });
 
 Contacts.attachSchema(ContactsSchema);

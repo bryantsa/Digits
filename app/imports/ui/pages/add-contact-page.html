@@ -17,6 +17,9 @@
           {{> Text_Form_Control label="Email" required=true errorMessage=(fieldError "email")}}
         </div>
       </div>
+      <div class="field">
+        {{> Checkbox_Form_Control label= "Favorite" checkboxes = favorite}}
+      </div>
       <button class="ui button" type="submit">Submit</button>
     </form>
   </div>

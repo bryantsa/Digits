@@ -12,6 +12,7 @@ const ContactSeeds = [
     address: '123 road',
     telephone: '808-123-4522',
     email: 'abc@hawaii.edu',
+    favorite: false,
   },
   {
     first: 'John',
@@ -19,6 +20,7 @@ const ContactSeeds = [
     address: '321 road',
     telephone: '909-123-4522',
     email: 'cba@hawaii.edu',
+    favorite: false,
   },
   {
     first: 'KK',
@@ -26,6 +28,7 @@ const ContactSeeds = [
     address: '300 road',
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
+    favorite: false,
   },
   {
     first: 'TEST TEST',
@@ -33,6 +36,7 @@ const ContactSeeds = [
     address: '300 road',
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
+    favorite: false,
   },
   {
     first: 'MONGO',
@@ -40,7 +44,9 @@ const ContactSeeds = [
     address: '300 road',
     telephone: '707-123-4522',
     email: 'pts@hawaii.edu',
+    favorite: false,
   },
+
 ];
 
 /**

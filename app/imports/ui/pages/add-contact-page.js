@@ -23,14 +23,6 @@ Template.Add_Contact_Page.helpers({
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.Name === fieldName);
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.Name);
   },
-  favorite() {
-    const r = Contacts.findOne(FlowRouter.getParam('_id'));
-    const x = r && r.favorite;
-    return r && _.map(hobbyList,
-        function makeHobbyObject(l) {
-          return { label: l, checked: _.contains(x, l) };
-        });
-  }
 });
 
 Template.Add_Contact_Page.events({
@@ -43,12 +35,8 @@ Template.Add_Contact_Page.events({
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
 
-    if (event.target.favorite.checked) {
-        favorite.push(event.target.favorite.value);
-      };
 
     const newContactData = { first, last, address, telephone, email };
-    console.log(Contacts.findOne({ first: 'Bryant', last: 'Sanchez' }));
     const existing = Contacts.findOne({ first: first, last: last });
     // Clear out any old validation errors.
     instance.context.resetValidation();
@@ -63,7 +51,6 @@ Template.Add_Contact_Page.events({
       }
     }
     else {
-      console.log('Error found 1');
       instance.messageFlags.set(displayErrorMessages, true);
     }
   },

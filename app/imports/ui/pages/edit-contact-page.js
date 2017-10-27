@@ -27,21 +27,31 @@ Template.Edit_Contact_Page.helpers({
   fieldError(fieldName) {
     const invalidKeys = Template.instance().context.invalidKeys();
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
-    return errorObject && Template.instace().context.keyErrorMessage(errorObject.name);
+    return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
+  fav(){
+    const fa = Contacts.findOne(FlowRouter.getParam('_id'));
+    const selected = fa && fa.favorite;
+    if(selected == true) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 });
 
 Template.Edit_Contact_Page.events({
   'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
-    const first = event.target.first.value;
-    const last = event.target.last.value;
-    const address = event.target.address.value;
-    const telephone = event.target.telephone.value;
-    const email = event.target.email.value;
+    const first = event.target.First.value;
+    const last = event.target.Last.value;
+    const address = event.target.Address.value;
+    const telephone = event.target.Telephone.value;
+    const email = event.target.Email.value;
+    const favorite = event.target.Favorite.checked;
 
-    const updatedContactData = { first, last, address, telephone, email };
+    const updatedContactData = { first, last, address, telephone, email, favorite };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newStudentData reflects what will be inserted.
